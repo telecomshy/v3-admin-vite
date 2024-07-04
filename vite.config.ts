@@ -35,7 +35,11 @@ export default ({ mode }: ConfigEnv): UserConfigExport => {
       /** 接口代理 */
       proxy: {
         "/api/v1": {
-          target: "https://mock.mengxuegu.com/mock/63218b5fb4c53348ed2bc212",
+          // 注意：
+          // 1. 只有测试环境代理才生效，正式环境编译以后是写死在程序中的，代理并不生效
+          // 2. /api/v1并不是被target代替，仍然在请求路径中
+          // target: "https://mock.mengxuegu.com/mock/63218b5fb4c53348ed2bc212",
+          target: "http://127.0.0.1:8000",
           ws: true,
           /** 是否允许跨域 */
           changeOrigin: true

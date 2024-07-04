@@ -5,9 +5,11 @@ export interface LoginRequestData {
   password: string
   /** 验证码 */
   code: string
+  /** 用户uuid */
+  uuid: string
 }
 
-export type LoginCodeResponseData = ApiResponseData<string>
+export type LoginCodeResponseData = ApiResponseData<{ uuid: string; captchaUrl: string }>
 
 export type LoginResponseData = ApiResponseData<{ token: string }>
 
