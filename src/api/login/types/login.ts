@@ -1,11 +1,11 @@
 export interface LoginRequestData {
   /** admin 或 editor */
-  username: "admin" | "editor"
+  username: string
   /** 密码 */
   password: string
   /** 验证码 */
   code: string
-  /** 用户uuid */
+  /** 验证码对应的uuid */
   uuid: string
 }
 
